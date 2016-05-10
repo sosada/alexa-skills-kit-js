@@ -15,8 +15,8 @@
  *
  * Examples:
  * One-shot model:
- *  User: "Alexa, ask Minecraft Helper how to make paper."
- *  Alexa: "(reads back recipe for paper)"
+ *  User: "Alexa, ask Whipt what are your flavorsr."
+ *  Alexa: "(reads back whipt cookie flavors)"
  */
 
 'use strict';
@@ -27,20 +27,20 @@ var AlexaSkill = require('./AlexaSkill'),
 var APP_ID = 'amzn1.echo-sdk-ams.app.2c3d5c3d-ee83-4b48-a47e-39666f2f747e'; //replace with 'amzn1.echo-sdk-ams.app.[your-unique-value-here]';
 
 /**
- * MinecraftHelper is a child of AlexaSkill.
+ * WhiptHelper is a child of AlexaSkill.
  * To read more about inheritance in JavaScript, see the link below.
  *
  * @see https://developer.mozilla.org/en-US/docs/Web/JavaScript/Introduction_to_Object-Oriented_JavaScript#Inheritance
  */
-var MinecraftHelper = function () {
+var WhiptHelper = function () {
     AlexaSkill.call(this, APP_ID);
 };
 
 // Extend AlexaSkill
-MinecraftHelper.prototype = Object.create(AlexaSkill.prototype);
-MinecraftHelper.prototype.constructor = MinecraftHelper;
+WhiptHelper.prototype = Object.create(AlexaSkill.prototype);
+WhiptHelper.prototype.constructor = WhiptHelper;
 
-MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
+WhiptHelper.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
     var speechText = "Thanks for your interest in Whipt! We can't wait to bake you some delicious cookies! You can ask a question like, what are your flavors or what is your phone number? ... Now, what info can we whip up for you?";
     // If the user either does not reply to the welcome message or says something that is not
     // understood, they will be prompted again with this text.
@@ -48,7 +48,7 @@ MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, sess
     response.ask(speechText, repromptText);
 };
 
-MinecraftHelper.prototype.intentHandlers = {
+WhiptHelper.prototype.intentHandlers = {
     "RecipeIntent": function (intent, session, response) {
         var itemSlot = intent.slots.Item,
             itemName;
@@ -111,6 +111,6 @@ MinecraftHelper.prototype.intentHandlers = {
 };
 
 exports.handler = function (event, context) {
-    var minecraftHelper = new MinecraftHelper();
-    minecraftHelper.execute(event, context);
+    var whiptHelper = new WhiptHelper();
+    whiptHelper.execute(event, context);
 };
