@@ -24,7 +24,7 @@
 var AlexaSkill = require('./AlexaSkill'),
     recipes = require('./recipes');
 
-var APP_ID = undefined; //replace with 'amzn1.echo-sdk-ams.app.[your-unique-value-here]';
+var APP_ID = 'amzn1.echo-sdk-ams.app.2c3d5c3d-ee83-4b48-a47e-39666f2f747e'; //replace with 'amzn1.echo-sdk-ams.app.[your-unique-value-here]';
 
 /**
  * MinecraftHelper is a child of AlexaSkill.
