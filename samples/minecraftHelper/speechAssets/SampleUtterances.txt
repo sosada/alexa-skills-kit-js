@@ -34,6 +34,6 @@ RecipeIntent tell me more about {Item}
 RecipeIntent tell me more about your {Item} 
 RecipeIntent who are the {Item}
 RecipeIntent who be {Item} 
-RecipeIntent who be your{Item} 
+RecipeIntent who be your {Item} 
 RecipeIntent who is {Item} 
 RecipeIntent who is your {Item}
