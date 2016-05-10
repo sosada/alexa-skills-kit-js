@@ -41,7 +41,7 @@ MinecraftHelper.prototype = Object.create(AlexaSkill.prototype);
 MinecraftHelper.prototype.constructor = MinecraftHelper;
 
 MinecraftHelper.prototype.eventHandlers.onLaunch = function (launchRequest, session, response) {
-    var speechText = "Welcome to the Minecraft Helper. You can ask a question like, what's the recipe for a chest? ... Now, what can I help you with.";
+    var speechText = "Thanks for your interest in Whipt! We can't wait to bake you some delicious cookies! You can ask a question like, what are your flavors or what is your phone number? ... Now, what info can we whip up for you?";
     // If the user either does not reply to the welcome message or says something that is not
     // understood, they will be prompted again with this text.
     var repromptText = "For instructions on what you can say, please say help me.";
@@ -69,9 +69,9 @@ MinecraftHelper.prototype.intentHandlers = {
         } else {
             var speech;
             if (itemName) {
-                speech = "I'm sorry, I currently do not know the recipe for " + itemName + ". What else can I help with?";
+                speech = "I'm sorry, I didn't understand " + itemName + ". Can you try again?";
             } else {
-                speech = "I'm sorry, I currently do not know that recipe. What else can I help with?";
+                speech = "I'm sorry, I missed what you asked for. Can you try again?";
             }
             speechOutput = {
                 speech: speech,
@@ -86,18 +86,18 @@ MinecraftHelper.prototype.intentHandlers = {
     },
 
     "AMAZON.StopIntent": function (intent, session, response) {
-        var speechOutput = "Goodbye";
+        var speechOutput = "Thanks again. We look forward to hearing from you.";
         response.tell(speechOutput);
     },
 
     "AMAZON.CancelIntent": function (intent, session, response) {
-        var speechOutput = "Goodbye";
+        var speechOutput = "Thanks again. We look forward to hearing from you.";
         response.tell(speechOutput);
     },
 
     "AMAZON.HelpIntent": function (intent, session, response) {
-        var speechText = "You can ask questions about minecraft such as, what's the recipe for a chest, or, you can say exit... Now, what can I help you with?";
-        var repromptText = "You can say things like, what's the recipe for a chest, or you can say exit... Now, what can I help you with?";
+        var speechText = "To get more info about Whipt including contact info, cookie flavors, styles, and toppings you can ask a question like what is your address, what are your flavors, or what are your toppings. When you're done, just say exit.";
+        var repromptText = "You can ask about our flavors, styles, toppings, and contact info. For more detailed info, say what is a snickerdoodle or tell me more about dipped and drizzled.";
         var speechOutput = {
             speech: speechText,
             type: AlexaSkill.speechOutputType.PLAIN_TEXT
