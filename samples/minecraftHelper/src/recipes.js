@@ -9,9 +9,13 @@
 */
 
 module.exports = {
+    "contact": "Please ask for phone, email, or address.",
+    "contact info" : "Please ask for phone, email, or address.",
     "phone": "8 4 4 4 4 Whipt. That number is 844-449-4478.",
+    "phone number": "8 4 4 4 4 Whipt. That number is 844-449-4478.",
     "address": "The Whipt Bakery is located at 14 40 East Second Street in Benicia, CA 9 4 5 1 0.",
     "email" : "orders@whiptcookies.com",
+    "email address" : "orders@whiptcookies.com",
     "hours": "Find us online 24/7",
     "website" : "w h i p t cookies dot com. That's whipt cookies dot com with whipt spelled as w h i p t.",
     "baker" : "Krizy is the one who makes those sweet, delicious goods.",
